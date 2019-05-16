@@ -1,0 +1,16 @@
+<div *ngIf="pokemonData" fxFlex="9 1 90%" fxLayoutAlign="center center">
+  <form class="console" (ngSubmit)="submit()">
+    <div>
+      <input
+        type="text"
+        name="pokemon"
+        [(ngModel)]="pokemon.name"
+        placeholder="Pokemon Name"
+      />
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary" value="Submit"></button>
+    </div>
+    <textarea>Strength and Weaknesses</textarea>
+  </form>
+</div>
