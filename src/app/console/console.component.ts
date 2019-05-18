@@ -9,11 +9,33 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./console.component.scss"]
 })
 export class ConsoleComponent implements OnInit {
-  private pokemonData: any;
-  constructor(private svc: PokemonService, private http: HttpClient) {}
+  pokemonData: any;
+  pokemonName: any;
+  ability: string;
+  constructor(private http: HttpClient) {}
 
-  ngOnInit() {
-    let obs = this.http.get("https://pokeapi.co/api/v2/pokemon/{name}");
-    obs.subscribe(res => console.log(res));
+  panelOpenState = false;
+
+  ngOnInit() {}
+
+  submit() {
+    let obs = this.http
+      .get("https://pokeapi.co/api/v2/pokemon/" + this.pokemonName)
+      .toPromise()
+      .then((res: any) => {
+        console.log(res);
+        this.pokemonData = res;
+        for (const i in res.abilities) {
+          console.log("ability", res.abilities[i].ability);
+          // this.ability = JSON.stringify(res.abilities[i].ability.name);
+          // for (const k in res.abilities[i]) {
+          //   console.log("another ability", res.abilities[i][k]);
+          // }
+        }
+        // for (const j in res.held_items);
+        // console.log(res.held_items[i].item.name);
+        // this.myForm.controls.email.setValue('')
+        // }
+      });
   }
 }
