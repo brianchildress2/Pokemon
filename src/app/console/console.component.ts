@@ -42,4 +42,8 @@ export class ConsoleComponent implements OnInit {
         // }
       });
   }
+
+  clear() {
+    this.abilities = null;
+  }
 }

@@ -1,36 +1,45 @@
-<div fxFlex="9 1 90%" fxLayoutAlign="center center">
-  <form class="console" (ngSubmit)="submit()">
-    <div>
-      <input
-        type="text"
-        name="pokemon"
-        [(ngModel)]="pokemonName"
-        placeholder="Pokemon Name"
-      />
-    </div>
-    <div>
-      <button type="submit" class="btn btn-primary" value="Submit">
-        Submit
-      </button>
-    </div>
+<div class="console" fxFlex="9 1 90%" fxLayoutAlign="center center">
+  <form (ngSubmit)="submit()">
+    <div class="searchPokemon">
+      <div>
+        <h1>Enter Pokemon Name</h1>
+        <input
+          type="text"
+          onkeydown="this.value = this.value.toLowerCase();"
+          name="pokemon"
+          [(ngModel)]="pokemonName"
+          placeholder="Pokemon Name"
+        />
+        <div>
+          <br />
+          <button type="submit" class="btn btn-primary" value="Submit">
+            Submit
+          </button>
+          <div class="divider"></div>
+          <button
+            type="reset"
+            class="btn btn-primary"
+            value="Reset"
+            (click)="clear()"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
 
-    <mat-accordion>
-      <mat-expansion-panel
-        (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false"
-      >
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Abilities
-          </mat-panel-title>
-          <mat-panel-description>
-            Currently I am
-            {{ panelOpenState ? "open" : "closed" }}. (***Click arrow to the
-            right***)
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <label>{{ abilities }}</label>
-      </mat-expansion-panel>
-    </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Abilities
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <label>{{ abilities }}</label>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
   </form>
 </div>

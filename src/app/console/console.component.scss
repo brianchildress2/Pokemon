@@ -1,0 +1,48 @@
+.console {
+  max-width: 50em;
+  margin-left: 25em;
+  margin-top: 10em;
+  position: relative;
+  padding: 2em 3em;
+}
+
+form {
+  display: inline-block;
+}
+
+.searchPokemon {
+  margin-right: 1rem;
+}
+
+.searchPokemon > div {
+  display: inline-block;
+}
+
+h1 {
+  margin-left: 5rem;
+  color: #003b70;
+}
+
+input {
+  margin-left: 2rem;
+  width: 25rem;
+}
+
+button {
+  margin-left: 2rem;
+  background: #003b70;
+  border: #003b70;
+  width: 9rem;
+  color: white;
+  border: none;
+}
+
+.divider {
+  width: 82.5px;
+  height: auto;
+  display: inline-block;
+}
+
+.mat-accordion {
+  color: #003b70;
+}
