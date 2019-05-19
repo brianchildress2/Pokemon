@@ -11,7 +11,10 @@ import { HttpClient } from "@angular/common/http";
 export class ConsoleComponent implements OnInit {
   pokemonData: any;
   pokemonName: any;
+  abilities: string;
   ability: string;
+  name: string;
+
   constructor(private http: HttpClient) {}
 
   panelOpenState = false;
@@ -26,7 +29,8 @@ export class ConsoleComponent implements OnInit {
         console.log(res);
         this.pokemonData = res;
         for (const i in res.abilities) {
-          console.log("ability", res.abilities[i].ability);
+          // console.log("ability", res.abilities[i].ability);
+          this.abilities = JSON.stringify(res.abilities);
           // this.ability = JSON.stringify(res.abilities[i].ability.name);
           // for (const k in res.abilities[i]) {
           //   console.log("another ability", res.abilities[i][k]);
