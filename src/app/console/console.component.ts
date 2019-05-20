@@ -10,8 +10,6 @@ export class ConsoleComponent implements OnInit {
   pokemonData: any;
   pokemonName: any;
   abilities: string;
-  ability: string;
-  name: string;
 
   constructor(private http: HttpClient) {}
 
