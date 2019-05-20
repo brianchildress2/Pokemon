@@ -25,6 +25,15 @@
             Clear
           </button>
         </div>
+        <!-- <div
+        message
+        *ngIf="(message | async)?.text"
+        [ngClass]="{
+          error: (message | async)?.type === MessageTypes.ERROR
+        }"
+      >
+        {{ (message | async)?.text }}
+      </div> -->
       </div>
 
       <mat-accordion>
